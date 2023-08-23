@@ -36,8 +36,5 @@
     "@types/http-status-codes": "^1.2.0",
     "@typescript-eslint/parser": "^6.3.0",
     "@typescript-eslint/eslint-plugin": "^6.3.0"
-  },
-  "engines": {
-    "node": "16.x"
   }
 }
