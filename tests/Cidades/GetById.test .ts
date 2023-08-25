@@ -1,33 +1,33 @@
-import { StatusCodes } from "http-status-codes";
-import { testServer } from "../jest.setup";
+import { StatusCodes } from 'http-status-codes';
+
+import { testServer } from '../jest.setup';
 
 
+describe('Cidades - GetById', () => {
 
-describe('Cidades - GetById',   () => {
-  it('Apaga registro', async () => {
+  it('Busca registro por id', async () => {
 
     const res1 = await testServer
-    .post('/cidades')
-    .send({ nome: 'Caxias do Sul' });
-
+      .post('/cidades')
+      .send({ nome: 'Caxias do sul' });
 
     expect(res1.statusCode).toEqual(StatusCodes.CREATED);
 
     const resBuscada = await testServer
-    .delete(`/cidades/${res1.body}`)
+      .get(`/cidades/${res1.body}`)
+      .send();
 
-    expect(resBuscada.statusCode).toEqual(StatusCodes.NO_CONTENT);
+    expect(resBuscada.statusCode).toEqual(StatusCodes.OK);
+    expect(resBuscada.body).toHaveProperty('nome');
   });
-  it('Tenta buscar registro não existente', async () => {
+  it('Tenta buscar registro que não existe', async () => {
 
     const res1 = await testServer
-    .get('/cidades/99999')
-    .send();
-
+      .get('/cidades/99999')
+      .send();
 
     expect(res1.statusCode).toEqual(StatusCodes.INTERNAL_SERVER_ERROR);
     expect(res1.body).toHaveProperty('errors.default');
   });
 });
-
 

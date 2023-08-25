@@ -19,8 +19,8 @@ describe('Pessoas - DeleteById', () => {
       .post('/pessoas')
       .send({
         cidadeId,
-        email: 'jucadelete@gmail.com',
-        nomeCompleto: 'Juca silva',
+        email: 'tropecodelete@gmail.com',
+        nomeCompleto: 'Tropeço da silva',
       });
     expect(res1.statusCode).toEqual(StatusCodes.CREATED);
 
@@ -38,5 +38,4 @@ describe('Pessoas - DeleteById', () => {
     expect(res1.body).toHaveProperty('errors.default');
   });
 });
-
 
