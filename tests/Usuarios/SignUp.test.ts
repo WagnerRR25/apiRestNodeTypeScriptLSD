@@ -9,8 +9,8 @@ describe('Usuário - SignUp', () => {
       .post('/cadastrar')
       .send({
         senha: '123456',
-        nome: 'Fulano Costa',
-        email: 'costafulano@gmail.com',
+        nome: 'Juca da Silva',
+        email: 'jucasilva@gmail.com',
       });
     expect(res1.statusCode).toEqual(StatusCodes.CREATED);
     expect(typeof res1.body).toEqual('number');
@@ -20,8 +20,8 @@ describe('Usuário - SignUp', () => {
       .post('/cadastrar')
       .send({
         senha: '123456',
-        nome: 'hugo Batista',
-        email: 'hugobatista@gmail.com',
+        nome: 'Pedro da Rosa',
+        email: 'pedro@gmail.com',
       });
     expect(res1.statusCode).toEqual(StatusCodes.CREATED);
     expect(typeof res1.body).toEqual('number');
@@ -31,8 +31,8 @@ describe('Usuário - SignUp', () => {
       .post('/cadastrar')
       .send({
         senha: '123456',
-        nome: 'Bernabeu da Rocha',
-        email: 'hugobatista@gmail.com',
+        nome: 'Pedro da Rosa',
+        email: 'pedroduplicado@gmail.com',
       });
     expect(res1.statusCode).toEqual(StatusCodes.CREATED);
     expect(typeof res1.body).toEqual('number');
