@@ -12,8 +12,6 @@ export const ensureAuthenticated: RequestHandler = async (req, res, next) => {
       errors: { default: 'Não autenticado' }
     });
   }
-  
-  console.log(authorization);
 
   const [type, token] = authorization.split(' ');
 

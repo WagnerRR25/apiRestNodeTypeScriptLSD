@@ -4,5 +4,5 @@ yarn-error.log
 /build
 /coverage
 
-
 .env
+*.sqlite

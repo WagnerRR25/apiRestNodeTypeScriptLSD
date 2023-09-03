@@ -17,7 +17,7 @@ export const signUpValidation = validation((getSchema) => ({
   })),
 }));
 
-export const signUp = async (req: Request<{}, {}, IUsuario>, res: Response) => {
+export const signUp = async (req: Request<{}, {}, IBodyProps>, res: Response) => {
   const result = await UsuariosProvider.create(req.body);
 
   if (result instanceof Error) {

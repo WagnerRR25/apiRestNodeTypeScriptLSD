@@ -1,4 +1,3 @@
-import { NumberSchema } from "yup";
 
 export interface IUsuario {
   id: number;
