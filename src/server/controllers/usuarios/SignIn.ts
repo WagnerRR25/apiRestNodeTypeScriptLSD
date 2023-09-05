@@ -18,8 +18,7 @@ export const signInValidation = validation((getSchema) => ({
 }));
 
 export const signIn = async (req: Request<{}, {}, IBodyProps>, res: Response) => {
-  const { email, senha } = req.body;
-
+  const { email, senha } = req.body;  
   const usuario = await UsuariosProvider.getByEmail(email);
   if (usuario instanceof Error) {
     return res.status(StatusCodes.UNAUTHORIZED).json({

@@ -5,7 +5,7 @@ import { Knex } from '../../knex';
 
 export const getByEmail = async (email: string): Promise<IUsuario | Error> => {
   try {
-    const result = await Knex(ETableNames.cidade)
+    const result = await Knex(ETableNames.usuario)
       .select('*')
       .where('email', '=', email)
       .first();

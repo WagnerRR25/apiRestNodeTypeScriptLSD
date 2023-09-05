@@ -15,7 +15,7 @@ export const ensureAuthenticated: RequestHandler = async (req, res, next) => {
 
   const [type, token] = authorization.split(' ');
 
-  if (type !== 'Beader') {
+  if (type !== 'Bearer') {
     return res.status(StatusCodes.UNAUTHORIZED).json({
       errors: { default: 'Não autenticado' }
     });
